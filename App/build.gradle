@@ -39,7 +39,7 @@ dependencies {
 }
 
 // List of sites used to create signingConfigs, sourceSets, and productFlavors.
-def sites = ["ifixit", "dozuki", "accustream", "dripassist", "magnoliamedical"]
+def sites = ["ifixit"]
 
 android {
    compileSdkVersion 21
@@ -53,12 +53,6 @@ android {
       minSdkVersion 9
       targetSdkVersion 21
       applicationId "com.dozuki.ifixit"
-   }
-
-   signingConfigs {
-      for (site in sites) {
-         "${site}" createSiteSigningConfig(site)
-      }
    }
 
    buildTypes {
@@ -84,7 +78,6 @@ android {
    productFlavors {
       for (site in sites) {
          "${site}" {
-            signingConfig signingConfigs."${site}"
             applicationId "com.dozuki.${site}"
 
             buildConfigField "String", "SEARCH_PROVIDER_AUTHORITY", "\"com.dozuki.${site}.ui.search.SearchSuggestionProvider\""
@@ -123,6 +116,7 @@ android {
       }
    }
 }
+
 
 /* Various functions to create DSL for a site. */
 
