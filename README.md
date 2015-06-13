@@ -3,7 +3,6 @@ Official iFixit Android App v2.6.0
 
 This app is a native Android version of the iFixit website including:
 
-
 * Device hierarchy browsing
 * Answers and guide lists for devices
 * Guide view
