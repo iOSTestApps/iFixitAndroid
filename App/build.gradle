@@ -84,7 +84,6 @@ android {
    productFlavors {
       for (site in sites) {
          "${site}" {
-            signingConfig signingConfigs."${site}"
             applicationId "com.dozuki.${site}"
 
             buildConfigField "String", "SEARCH_PROVIDER_AUTHORITY", "\"com.dozuki.${site}.ui.search.SearchSuggestionProvider\""
