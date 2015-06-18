@@ -25,7 +25,6 @@ release.properties
 pom.xml.*
 
 #Gradle
-/gradle.properties
 .gradle
 */build
 build
